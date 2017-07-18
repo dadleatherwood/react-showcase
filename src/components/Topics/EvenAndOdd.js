@@ -2,10 +2,67 @@ import React, {Component} from 'react'
 
 class EvenAndOdd extends Component {
 
-  render() {
-    return (
+  constructor() {
+    super()
+    this.state = {
+      evenArray: [],
+      oddArray: [],
+      userInput: "",
+      user: {name: "Brian"}
+    }
+    this.updateUserInput = this.updateUserInput.bind(this)
+    this.sortEvenAndOdd = this.sortEvenAndOdd.bind(this)
+  }
 
-      <p>EvenAndOdd</p>
+  //methods
+  updateUserInput(e) {
+    this.setState({userInput: e.target.value})
+  }
+
+  sortEvenAndOdd(){
+    const {userInput} = this.state
+    const numbers = userInput.split(",")
+    const evens = []
+    const odds = []
+    for (var i = 0; i < numbers.length; i++) {
+      let num = parseInt(numbers[i])
+      if (num % 2 === 0 ) {
+        evens.push(num)
+      } else if (num % 2 !== 0) {
+        odds.push(num)
+      }
+    }
+    console.log(evens, odds)
+    this.setState({evenArray: evens, oddArray: odds})
+  }
+
+  render() {
+    // const evens = this.state.evenArray.map((num, index) => {
+    //   return (
+    //     <li key={index}>{num}</li>
+    //   )
+    // })
+    // const odds = this.state.oddArray.map((num, index) => {
+    //   return (
+    //     <li key={index}>{num}</li>
+    //   )
+    // })
+
+    return (
+      <div className="puzzleBox evenAndOddPB">
+        <h4>Evens and Odds</h4>
+        <input className="inputLine"
+          onChange={this.updateUserInput}
+          placeholder="Type a series of numbers"/>
+        <button className="confirmationButton"
+          onClick={this.sortEvenAndOdd}>Sort</button>
+        <span className="resultsBox">
+          Evens: { JSON.stringify(this.state.evenArray) }
+        </span>
+        <span className="resultsBox">
+          Odds: { JSON.stringify(this.state.oddArray) }
+        </span>
+      </div>
 
     )
   }
