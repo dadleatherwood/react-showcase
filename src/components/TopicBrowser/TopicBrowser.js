@@ -13,7 +13,6 @@ class TopicBrowser extends Component {
       <div>
         <EvenAndOdd/>
         <FilterObject/>
-        <FilterObject/>
         <FilterString/>
         <Palindrome/>
         <Sum/>

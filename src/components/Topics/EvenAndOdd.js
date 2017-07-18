@@ -8,7 +8,6 @@ class EvenAndOdd extends Component {
       evenArray: [],
       oddArray: [],
       userInput: "",
-      user: {name: "Brian"}
     }
     this.updateUserInput = this.updateUserInput.bind(this)
     this.sortEvenAndOdd = this.sortEvenAndOdd.bind(this)
@@ -19,7 +18,7 @@ class EvenAndOdd extends Component {
     this.setState({userInput: e.target.value})
   }
 
-  sortEvenAndOdd(){
+  sortEvenAndOdd() {
     const {userInput} = this.state
     const numbers = userInput.split(",")
     const evens = []
@@ -55,7 +54,7 @@ class EvenAndOdd extends Component {
           onChange={this.updateUserInput}
           placeholder="Type a series of numbers"/>
         <button className="confirmationButton"
-          onClick={this.sortEvenAndOdd}>Sort</button>
+          onClick={this.sortEvenAndOdd}>Split</button>
         <span className="resultsBox">
           Evens: { JSON.stringify(this.state.evenArray) }
         </span>
