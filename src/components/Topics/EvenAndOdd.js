@@ -36,17 +36,6 @@ class EvenAndOdd extends Component {
   }
 
   render() {
-    // const evens = this.state.evenArray.map((num, index) => {
-    //   return (
-    //     <li key={index}>{num}</li>
-    //   )
-    // })
-    // const odds = this.state.oddArray.map((num, index) => {
-    //   return (
-    //     <li key={index}>{num}</li>
-    //   )
-    // })
-
     return (
       <div className="puzzleBox evenAndOddPB">
         <h4>Evens and Odds</h4>
